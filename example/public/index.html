@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firewatch JS Example</title>
+  </head>
+  <body>
+    <h1>Firewatch JS Example</h1>
+    <script type="module">
+      import { init } from "/js/firewatch-js.js";
+
+      init({
+        /*sendLog: async (logEntry) => {
+          console.log("Firewatch log entry:", logEntry);
+        },*/
+        url: "/testWithUrl",
+        interceptors: {
+          interceptConsole: true,
+          interceptUncaughtExceptions: true,
+          interceptUnhandledRejections: true,
+        },
+      });
+
+      const buttonException = document.createElement("button");
+      buttonException.textContent = "Throw test error";
+      buttonException.addEventListener("click", () => {
+        throw new Error("Test uncaught exception from Firewatch example page");
+      });
+      document.body.appendChild(buttonException);
+
+      const buttonRejection = document.createElement("button");
+      buttonRejection.textContent = "Throw test rejection";
+      buttonRejection.addEventListener("click", () => {
+        Promise.reject(new Error("Test unhandled rejection from Firewatch example page"));
+      });
+      document.body.appendChild(buttonRejection);
+    </script>
+    <p>This is an example of using Firewatch JS.</p>
+    <button onclick="console.debug('Test console.debug from button')">test console.debug</button>
+    <button onclick="console.log('Test console.log from button')">test console.log</button>
+    <button onclick="console.warn('Test console.warn from button')">test console.warn</button>
+    <button onclick="console.error('Test console.error from button')">test console.error</button>
+  </body>
+</html>

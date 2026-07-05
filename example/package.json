@@ -1,0 +1,18 @@
+{
+  "name": "firewatch-js-server-example",
+  "version": "1.0.0",
+  "description": "An example on how to use & consume firewatch-js for tracking errors",
+  "license": "MIT",
+  "author": "Vincent Francolin",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "express": "^5.2.1",
+    "serve-static": "^2.2.1"
+  }
+}
