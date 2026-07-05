@@ -9,3 +9,5 @@ npm i firewatch-js
 ```
 
 ## How to use?
+
+To get more information, have a look at the [documentation](https://vince-f.github.io/firewatch-js/).
