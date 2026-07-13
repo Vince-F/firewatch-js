@@ -1,16 +1,33 @@
 {
   "name": "firewatch-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library to send application log to any backend",
   "keywords": [
     "logs",
     "errors",
     "browser"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vince-F/firewatch-js.git"
+  },
   "license": "MIT",
   "author": "Vincent Francolin",
   "type": "module",
-  "main": "./dist/firewatch-js.js",
+  "exports": {
+    ".": {
+      "import": "./dist/firewatch-js.js",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "homepage": "https://vince-f.github.io/firewatch-js/documents/How_to_use_.html",
+  "bugs": {
+    "url": "https://github.com/Vince-F/firewatch-js/issues"
+  },
   "scripts": {
     "checkAndBuildAll": "npm run lint:check && npm run test && npm run build && npm run types && npm run doc",
     "dev": "vite",
